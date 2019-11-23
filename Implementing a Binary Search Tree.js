@@ -65,22 +65,19 @@ class BinarySearchTree {
     let parentNode = null;
 
     while(currentNode) {
-      
       if(value < currentNode.value) {
-        this.parentNode = currentNode;
-        this.currentNode = this.currentNode.left;
+        parentNode = currentNode;
+        currentNode = currentNode.left;
       } else if(value > currentNode.value) {
-        this.parentNode = currentNode.value;
-        this.currentNode = currentNode.right;
+        parentNode = currentNode;
+        currentNode = currentNode.right;
       } else if(currentNode.value == value) {
          // We have a match
-
           //Option 1: No right child
         if(currentNode.right == null) {
           if(parentNode === null) {
             this.root === currentNode.left; 
           } else {
-
             //if parent > current value make current left child as a left child of parent
             if(currentNode.value < parentNode.value) {
               parentNode.left = currentNode.left;
