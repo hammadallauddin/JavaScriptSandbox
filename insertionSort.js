@@ -1,7 +1,26 @@
   // implement insertion sort
 
-  const numbers =  [5,4,3,22,1,0,12,9,6];
-                    //[0,4,3,22]
+  const numbers = [-12,5,6,7,2,33,44,11,53,22,1,0,-2,-9,8,2,1,4];
+  min = numbers[0];
+  i = 1;
+  while(i<numbers.length) {
+    if(min>numbers[i])
+      for(j=i; j>0;j--){
+        if(numbers[j] < numbers[j-1]){
+        temp = numbers[j];
+        numbers[j] = numbers[j-1];
+        numbers[j-1] = temp;
+        }
+      }
+      min = numbers[i];
+    i++
+  }
+  console.log(numbers);
+
+
+
+
+  const numbers =  [5,4,3,22,1,0,12,9,6];                    //[0,4,3,22]
   for(let i = 0; i<numbers.length; i++) {
     if(numbers[0] > numbers[i]) {
       console.log("upper i = "+i);
